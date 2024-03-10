@@ -9,6 +9,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    document.body.classList.add(inter.className);
+    return () => {
+      document.body.classList.remove(inter.className);
+    };
+  }, []);
+
   return (
     <html lang="en">
       <body className={rubik.className}>{children}</body>
